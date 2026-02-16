@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "6767:6767"
+    environment:
+      APP_ENV: ${APP_ENV}
+      PORT: "6767"
+      DB_URL: ${DB_URL}
+      GIN_MODE: ${GIN_MODE}
+      GOOSE_DRIVER: ${GOOSE_DRIVER}
+      GOOSE_DBSTRING: ${GOOSE_DBSTRING}
+      GOOSE_MIGRATION_DIR: ${GOOSE_MIGRATION_DIR}
+      GOOSE_TABLE: ${GOOSE_TABLE}
