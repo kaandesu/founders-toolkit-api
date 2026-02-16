@@ -6,10 +6,10 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "6767:6767"
+      - "6869:6869"
     environment:
       APP_ENV: ${APP_ENV}
-      PORT: "6767"
+      PORT: "6869"
       DB_URL: ${DB_URL}
       GIN_MODE: ${GIN_MODE}
       GOOSE_DRIVER: ${GOOSE_DRIVER}
