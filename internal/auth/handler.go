@@ -21,7 +21,6 @@ func SignUp(db *database.Service) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var body struct {
 			Email    string `json:"email" binding:"required,email"`
-			Fullname string `json:"full_name" binding:"required"`
 			Password string `json:"password" binding:"required,min=6"`
 		}
 
@@ -38,7 +37,6 @@ func SignUp(db *database.Service) gin.HandlerFunc {
 
 		user := &models.User{
 			Email:    body.Email,
-			Fullname: body.Fullname,
 			Password: string(hashedPassword),
 		}
 
