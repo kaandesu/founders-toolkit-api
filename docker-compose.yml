@@ -5,8 +5,8 @@ services:
     build:
       dockerfile: Dockerfile
     restart: unless-stopped
-    expose:
-      - "6869"
+    ports:
+      - "6869:6869"
     environment:
       APP_ENV: ${APP_ENV}
       PORT: "6869"
